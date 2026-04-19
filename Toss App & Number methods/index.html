@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toss App</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+#image {
+    width: 120px;
+    height: 120px;
+    margin: 20px 0;
+    border-radius: 50%;
+    border: 5px solid #eee;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+#image:hover {
+    transform: rotate(20deg) scale(1.1);
+}
+
+.buttons {
+    margin-top: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 8px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.heads {
+    background: #4CAF50;
+    color: white;
+}
+
+.tails {
+    background: #ff4757;
+    color: white;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    min-height: 24px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Toss App</h1>
+    <h2>Try Your Luck.</h2>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Heads_and_Tails_coin.png" id="image">
+
+    <div class="buttons">
+        <button class="heads" onclick="toss('heads')">Heads</button>
+        <button class="tails" onclick="toss('Tails')">Tails</button>
+    </div>
+
+    <h3 id="result"></h3>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -4,10 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Objects</title>
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+}
+
+/* Grid */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
+}
+
+/* Card */
+.car-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.car-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Image */
+.car-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.car-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Content */
+.car-content {
+    padding: 15px;
+}
+
+.car-title {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.car-year {
+    margin: 8px 0;
+    opacity: 0.8;
+}
+
+/* Color badge */
+.car-color {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    margin-top: 8px;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    color: white;
+}
+
+/* Button */
+.btn {
+    margin-top: 12px;
+    display: inline-block;
+    padding: 8px 14px;
+    background: #3b82f6;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+</style>
 </head>
 <body>
-    <h1>Hello Objects
-    </h1>
+    <h1>Cars</h1>
+
+    <div class="container">
+        
+    </div>
 
 
 

@@ -142,3 +142,10 @@ function changeCateg(index) {
     console.log(filteredProducts);
     renderItems(filteredProducts)
 }
+
+
+
+// const Electronics = products.filter((item)=>{
+//     return item.category === 'Electronics'
+// })
+// console.log(Electronics);

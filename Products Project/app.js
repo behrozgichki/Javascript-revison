@@ -91,61 +91,81 @@ const products = [
 ];
 
 const container = document.querySelector("#container");
+const checkoutBtn = document.querySelector("#checkout-btn")
+const getCartItems = JSON.parse(localStorage.getItem("cartItems"))
+console.log(getCartItems);
+const cartItems = getCartItems
 const categoryArr = ['all']
+const btns = document.querySelector("#btns")
 
-// products.map((item) => {
-//   container.innerHTML += `<div class="card">
-//             <h3>${item.name}</h3>
-//             <p>Category: ${item.category}</p>
-//             <p class="price">$${item.price}</p>
-//             <p>Stock: ${item.stock}</p>
-//             <button>add to cart</button>
-//         </div>`;
-// });
 
-const renderItems = (arr) => {
-  container.innerHTML = "";
-  arr.map((item) => {
-    container.innerHTML += ` <div class="card" data-category="${item.category}">
-        <h3>${item.name}</h3>
-        <p class="price">$${item.price}</p>
-        <p>Stock: ${item.stock}</p>
-        <button>Add to Cart</button>
-      </div>`;
-  });
-};
+
+
+
+const renderItems = (arr)=>{
+    container.innerHTML = ''
+    arr.map((item)=>{
+        container.innerHTML += `<div class="card" data-category="${item.category}">
+         <h3>${item.name}</h3>
+         <p class="price">$${item.price}</p>
+         <p>Stock: ${item.stock}</p>
+         <button onclick = "addToCart(${item.id})">Add to Cart</button>
+      </div>`
+    })
+}
 renderItems(products)
+
+function addToCart(id) {
+    // console.log(id);
+
+    const singleProduct = products.find(item => item.id === id)
+    if (cartItems.includes(singleProduct)) {
+        console.log('item is already available');
+        const index = cartItems.findIndex(item=> item.id === singleProduct.id
+        )
+        console.log(index);
+        cartItems[index].quantity = +1
+        
+        
+    }else{
+        singleProduct.quantity = 1
+        console.log('item is not available');
+        cartItems.push(singleProduct)
+        
+    }
+    console.log(cartItems);
+    
+    
+}
+checkoutBtn.addEventListener('click' , ()=>{
+    localStorage.setItem('cartItem' , JSON.stringify(cartItems))
+    window.location = 'cart.html'
+    
+})
 
 
 products.map((item)=>{
     if (!categoryArr.includes(item.category)) {
         categoryArr.push(item.category)
+    } else {
+        
     }
 })
 
-const btns = document.querySelector("#btns")
-
-categoryArr.map((item , index )=>{
+categoryArr.map((item , index)=>{
     btns.innerHTML += `<button onclick = "changeCateg(${index})">${item}</button>`
 })
 
+
 function changeCateg(index) {
-    console.log(categoryArr[index]);
     if (index === 0) {
         renderItems(products)
         return
     }
-
-    const filteredProducts = products.filter((item) =>
-        item.category === categoryArr[index],
-    )
-    console.log(filteredProducts);
-    renderItems(filteredProducts)
+    const filteredProducts = products.filter((item)=>
+    item.category === categoryArr[index],
+)
+console.log(filteredProducts);
+renderItems(filteredProducts)
 }
 
-
-
-// const Electronics = products.filter((item)=>{
-//     return item.category === 'Electronics'
-// })
-// console.log(Electronics);

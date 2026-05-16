@@ -4,10 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
+
+    <style>#checkout-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.checkout-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.checkout-left{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.checkout-left img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.checkout-info h3{
+    margin: 0;
+    font-size: 18px;
+}
+
+.checkout-info p{
+    margin: 5px 0;
+    color: gray;
+}
+
+.checkout-right{
+    text-align: right;
+}
+
+.checkout-right h2{
+    margin: 0;
+    color: #222;
+}
+
+.quantity{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}</style>
 </head>
 <body>
     <h1>Cart</h1>
 
-    <script src="cart.js"></script>
+    <div id="checkout-container"></div>
+             <div class="total-section">
+            Total: $<span class="total-amount">200</span>
+        </div>
+    </div>
+
+
+<script src="cart.js"></script>
 </body>
 </html>

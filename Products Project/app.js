@@ -92,7 +92,7 @@ const products = [
 
 const container = document.querySelector("#container");
 const checkoutBtn = document.querySelector("#checkout-btn")
-const getCartItems = JSON.parse(localStorage.getItem("cartItems"))
+const getCartItems = JSON.parse(localStorage.getItem("cartItems")) || []
 console.log(getCartItems);
 const cartItems = getCartItems
 const categoryArr = ['all']
@@ -147,8 +147,6 @@ checkoutBtn.addEventListener('click' , ()=>{
 products.map((item)=>{
     if (!categoryArr.includes(item.category)) {
         categoryArr.push(item.category)
-    } else {
-        
     }
 })
 

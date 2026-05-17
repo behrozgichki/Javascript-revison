@@ -182,8 +182,8 @@ console.log('hello world');
 
 
 let marks = 20;
-const passingMarks = marks > 80 ? "A+" : marks > 50 ? "B+" : 'Fail'
-console.log(passingMarks);
+// const passingMarks = marks > 80 ? "A+" : marks > 50 ? "B+" : 'Fail'
+// console.log(passingMarks);
 
 
 
@@ -235,8 +235,8 @@ console.log(passingMarks);
 // console.log(c);
 
 
-let a = ['shabir' , 'alam' , 'junaid']
-let b = ['ali' , 'wajid' , 'Uzair']
-let allNames = [...a , ...b]
-let upperCaseNames = allNames.map((name) => name.charAt(0).toUpperCase()+name.slice(1))
-console.log(upperCaseNames);
+// let a = ['shabir' , 'alam' , 'junaid']
+// let b = ['ali' , 'wajid' , 'Uzair']
+// let allNames = [...a , ...b]
+// let upperCaseNames = allNames.map((name) => name.charAt(0).toUpperCase()+name.slice(1))
+// console.log(upperCaseNames);
